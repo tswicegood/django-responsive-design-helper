@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Responsive design testing for the masses">
+  <title>Responsive Design Testing</title>
+  <style>
+    *{vertical-align:top;}
+    body{padding:20px;font-family:sans-serif;overflow-y:scroll;}
+    h2{margin:0 0 20px 0;}
+    span.small{font-size:60%;vertical-align:middle;}
+    #url{margin:0 0 20px 0px;display:block;}
+    #url input[type=text]{border:solid 1px #666;width:85%;margin:0 auto;font-size:2em;text-align:left;}
+    #url input[type=submit]{display:none;}
+    #url #options{float:right;line-height:25px;width:13%;}
+    #url #options input{margin-top:5px;}
+    #frames{overflow-x:scroll;width:100%;margin-bottom:10px;padding-bottom:20px;}
+    .frame{margin-right:20px;float:left;}
+    .frame:last-child{margin-right:0;}
+    .frame img{display:none;vertical-align:middle;}
+    iframe{border:solid 1px #000;}
+    .widthOnly {height:580px;}
+    .widthOnly h2 span{display:none;}
+    .widthOnly iframe{height:500px;}
+  </style>
+</head>
+<body id="container">
+  <div id="url">
+    <form method="post">
+      <input type="text" placeholder="Test your own site... type the url and hit enter" />
+      <input type="submit" value="submit">
+      <div id="options">
+        <label for="normal"><input id="normal" type="radio" name="option" value="1" checked>Width only</label><br />
+        <label for="accurate"><input id="accurate" type="radio" name="option" value="2">Device sizes</label>
+      </div>
+    </form>
+  </div>
+  <div id="frames" class="widthOnly">
+    <div id="inner">
+      {% block content %}{% endblock %}
+    </div>
+  </div>
+  <span>A tool by <a href="http://mattkersley.com">Matt Kersley</a> - <a href="https://github.com/mattkersley/Responsive-Design-Testing">Fork it on Github</a></span><br />
+  <span>Note: The content width may not be pixel perfect - I have added 15px to the iframes to cater for the scrollbars</span>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"></script>
+  <script src="{{ STATIC_URL }}responsive_design_helper/responsive.js"></script>
+  <script>
+  responsiveDesignHelper("{{ url_to_test }}");
+  </script>
+
+</body>
+</html>
