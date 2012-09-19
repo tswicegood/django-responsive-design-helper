@@ -27,7 +27,7 @@ for dirpath, dirnames, filenames in os.walk('responsive_design_helper'):
 
 setup(
     name='django-responsive-design-helper',
-    version='0.1.0',
+    version='0.2.0alpha.0',
     description='Helper for testing responsive designs in Django',
     author='Travis Swicegood',
     author_email='development@domain51.com',
