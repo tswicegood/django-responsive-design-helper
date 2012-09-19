@@ -1,0 +1,2 @@
+include setup.py README.rst MANIFEST.in LICENSE VERSION
+recursive-include responsive_web_design/static *
