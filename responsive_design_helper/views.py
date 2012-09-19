@@ -10,6 +10,6 @@ class ResponsiveTestView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(ResponsiveTestView, self).get_context_data(**kwargs)
-        url_to_test = self.request.build_absolute_uri()[0:-len("responsive/")]
-        context["url_to_test"] = url_to_test
+        url = self.request.build_absolute_uri()
+        context["url_to_test"] = url[0:url.rindex("responsive")]
         return context
