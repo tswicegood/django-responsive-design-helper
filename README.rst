@@ -26,7 +26,7 @@ argument in your ``patterns`` call:
     )
 
 With that out of the way, add ``responsive/`` to any of the URLs on your Django
-site and site back and watch the magic happen.
+site and sit back and watch the magic happen.
 
 
 Contributing
